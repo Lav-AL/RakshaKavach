@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/dark_bg">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/black"
+        app:title="🎯 Daily Safety Quiz"
+        app:titleTextColor="@color/warning_yellow"
+        app:navigationIconTint="@color/warning_yellow" />
+
+    <!-- Quiz Layout -->
+    <LinearLayout
+        android:id="@+id/layout_quiz"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tv_question_number"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Question 1/5"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏱️ 30 s"
+                android:textColor="@color/warning_yellow"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score: 0"
+                android:textColor="@color/success_green"
+                android:textSize="14sp"
+                android:layout_marginStart="12dp" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_quiz"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:max="100"
+            android:progress="0"
+            android:progressTint="@color/warning_yellow"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Question Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="#FF1A1A1A"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <TextView
+                android:id="@+id/tv_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Question text here?"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:lineSpacingExtra="4dp" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Options -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_option_0"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="A. Option 1"
+            android:textSize="14sp"
+            android:backgroundTint="@color/option_default_bg"
+            android:textColor="@color/black"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="10dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_option_1"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="B. Option 2"
+            android:textSize="14sp"
+            android:backgroundTint="@color/option_default_bg"
+            android:textColor="@color/black"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="10dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_option_2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="C. Option 3"
+            android:textSize="14sp"
+            android:backgroundTint="@color/option_default_bg"
+            android:textColor="@color/black"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="10dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_option_3"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="D. Option 4"
+            android:textSize="14sp"
+            android:backgroundTint="@color/option_default_bg"
+            android:textColor="@color/black"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Explanation -->
+        <TextView
+            android:id="@+id/tv_explanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/info_blue"
+            android:textSize="13sp"
+            android:background="#1A0088FF"
+            android:padding="12dp"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next_question"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="NEXT QUESTION ›"
+            android:textStyle="bold"
+            android:backgroundTint="@color/warning_yellow"
+            android:textColor="@color/black"
+            app:cornerRadius="12dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- Results Layout -->
+    <ScrollView
+        android:id="@+id/layout_results"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QUIZ RESULTS"
+                android:textColor="@color/warning_yellow"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:id="@+id/tv_final_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4/5"
+                android:textColor="@color/white"
+                android:textSize="64sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_final_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="80%"
+                android:textColor="@color/success_green"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <ProgressBar
+                android:id="@+id/progress_final_score"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:max="100"
+                android:progress="80"
+                android:progressTint="@color/success_green"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:id="@+id/tv_result_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🏆 SAFETY CHAMPION!"
+                android:textColor="@color/success_green"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_points_earned"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+24 Safety Points Earned!"
+                android:textColor="@color/warning_yellow"
+                android:textSize="16sp"
+                android:layout_marginBottom="32dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_retake_quiz"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="🔄 RETAKE QUIZ"
+                android:textStyle="bold"
+                android:backgroundTint="@color/warning_yellow"
+                android:textColor="@color/black"
+                app:cornerRadius="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_go_home"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="🏠 BACK TO HOME"
+                android:backgroundTint="#FF333333"
+                android:textColor="@color/white"
+                app:cornerRadius="12dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

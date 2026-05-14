@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/dark_bg">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/black"
+        app:title="⛑️ Safety Gear Checklist"
+        app:titleTextColor="@color/warning_yellow"
+        app:navigationIconTint="@color/warning_yellow" />
+
+    <!-- Task Header Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Task name + risk chip row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp">
+
+                <TextView
+                    android:id="@+id/tv_task_name"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="⛏️  Digging Trench"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_risk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HIGH RISK"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:chipBackgroundColor="@color/risk_high" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_task_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Task description here"
+                android:textColor="#AAFFFFFF"
+                android:textSize="13sp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Progress Bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp">
+
+                <ProgressBar
+                    android:id="@+id/progress_gear"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="14dp"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressTint="@color/success_green"
+                    android:progressBackgroundTint="#33FFFFFF"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_gear_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 items required"
+                    android:textColor="@color/warning_yellow"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_gear_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 / 5 Gear Items Verified"
+                android:textColor="#AAFFFFFF"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Status Message -->
+    <TextView
+        android:id="@+id/tv_status_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="❌ All gear items unchecked!"
+        android:textColor="@color/risk_high"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="12dp"
+        android:background="#1AFF6D00" />
+
+    <!-- Instruction -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TAP EACH ITEM TO VERIFY YOU ARE WEARING IT"
+        android:textColor="#66FFFFFF"
+        android:textSize="11sp"
+        android:letterSpacing="0.05"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="#FF111111" />
+
+    <!-- Gear List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_gear_checklist"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false" />
+
+    <!-- Done Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_done"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="MARK AS DONE"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/warning_yellow"
+        android:layout_margin="16dp"
+        app:cornerRadius="14dp" />
+
+</LinearLayout>

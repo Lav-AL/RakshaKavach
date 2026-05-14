@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="28dp"
+        android:paddingTop="60dp"
+        android:paddingBottom="40dp">
+
+        <!-- Logo & App Name -->
+        <TextView
+            android:id="@+id/iv_logo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:text="🛡️"
+            android:textSize="60sp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RAKSHA-KAVACH"
+            android:textColor="@color/warning_yellow"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Worker Safety Auditor"
+            android:textColor="#99FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginBottom="40dp" />
+
+        <!-- Login Form Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#FF1A1A1A"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOGIN TO YOUR ACCOUNT"
+                    android:textColor="@color/warning_yellow"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- Email Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="@color/warning_yellow"
+                    app:hintTextColor="@color/warning_yellow"
+                    app:boxBackgroundColor="#FF222222"
+                    android:hint="Email Address"
+                    android:layout_marginBottom="14dp"
+                    app:startIconDrawable="@drawable/ic_email"
+                    app:startIconTint="@color/warning_yellow">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/white"
+                        android:textColorHint="#66FFFFFF"
+                        android:imeOptions="actionNext" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Password Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="@color/warning_yellow"
+                    app:hintTextColor="@color/warning_yellow"
+                    app:boxBackgroundColor="#FF222222"
+                    android:hint="Password"
+                    android:layout_marginBottom="8dp"
+                    app:startIconDrawable="@drawable/ic_lock"
+                    app:startIconTint="@color/warning_yellow"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/warning_yellow">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:textColor="@color/white"
+                        android:textColorHint="#66FFFFFF"
+                        android:imeOptions="actionDone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Forgot Password -->
+                <TextView
+                    android:id="@+id/tv_forgot_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="Forgot Password?"
+                    android:textColor="@color/info_blue"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="20dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <!-- Error Message -->
+                <TextView
+                    android:id="@+id/tv_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/risk_extreme"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:background="#1AFF1744"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Progress Bar -->
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/warning_yellow"
+                    android:visibility="gone"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Login Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="🔐  LOGIN"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:backgroundTint="@color/warning_yellow"
+                    android:layout_marginBottom="20dp"
+                    app:cornerRadius="14dp" />
+
+                <!-- Divider -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#33FFFFFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  Don't have an account?  "
+                        android:textColor="#66FFFFFF"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#33FFFFFF" />
+                </LinearLayout>
+
+                <!-- Register Link -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tv_register_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="CREATE NEW ACCOUNT"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/warning_yellow"
+                    android:backgroundTint="#FF111111"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    app:strokeColor="@color/warning_yellow"
+                    app:strokeWidth="2dp"
+                    app:cornerRadius="14dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Safety Tagline -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚠️  Safety is not an option — it's a DUTY"
+            android:textColor="#55FFFFFF"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:layout_marginTop="28dp" />
+
+    </LinearLayout>
+</ScrollView>
