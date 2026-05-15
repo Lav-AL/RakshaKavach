@@ -1,32 +1,46 @@
-# Built application files
-*.apk
-*.aab
-*.ap_
-
-# Build directory - IMPORTANT: excludes auto-generated Java stubs
+# ─── Build outputs ────────────────────────────────────────────────────────────
 /build
 app/build
 **/build/
 
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Gradle files
-.gradle
+# ─── Gradle cache (local machine only) ────────────────────────────────────────
+.gradle/
 gradle-wrapper.jar
 
-# Android Studio IDE files
+# ─── Android Studio IDE files ─────────────────────────────────────────────────
 *.iml
-.idea/
-.DS_Store
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+.idea/modules.xml
 captures/
 
-# Keystore files (NEVER commit these)
+# ─── Local machine configuration ──────────────────────────────────────────────
+# Contains SDK path — differs per machine, never commit
+local.properties
+
+# ─── Compiled / binary files ──────────────────────────────────────────────────
+*.apk
+*.aab
+*.ap_
+*.class
+*.dex
+
+# ─── Keystore (CRITICAL: never commit signing keys) ───────────────────────────
 *.jks
 *.keystore
 
-# Log files
+# ─── Logs & temp files ────────────────────────────────────────────────────────
 *.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
 
-# Google Services (if added later)
-google-services.json
+# ─── Firebase / Google Services ───────────────────────────────────────────────
+# Uncomment when added:
+# google-services.json
