@@ -1,78 +1,191 @@
-# Git Commands — Fix Your RakshaKavach Repo
-# Run these one by one in your terminal (inside the project folder)
+[README.md](https://github.com/user-attachments/files/27790029/README.md)
+# 🦺 Raksha-Kavach — Worker Safety Auditor
 
-# ─────────────────────────────────────────────
-# STEP 1: Add the .gitignore FIRST
-# (this stops IDE/build files from being tracked)
-# ─────────────────────────────────────────────
+> **Raksha-Kavach** (Sanskrit: *Shield & Armour*) — An Android app that digitizes daily safety compliance for construction and manufacturing workers.
 
-# Copy the .gitignore file into your project root, then:
-git rm -r --cached .gradle
-git rm -r --cached .idea
-git rm --cached local.properties
-git add .gitignore
-git commit -m "chore: add .gitignore, remove IDE and build files"
+[![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://android.com)
+[![Language](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.java.com)
+[![Min SDK](https://img.shields.io/badge/Min%20SDK-24%20(Android%207.0)-blue.svg)](https://developer.android.com)
+[![Target SDK](https://img.shields.io/badge/Target%20SDK-34%20(Android%2014)-blue.svg)](https://developer.android.com)
+[![Internship](https://img.shields.io/badge/MindMatrix-VTU%20Internship%20%2342-yellow.svg)]()
 
+---
 
-# ─────────────────────────────────────────────
-# STEP 2: Add README.md
-# ─────────────────────────────────────────────
+## 📌 Problem Statement
 
-# Copy README.md into your project root, then:
-git add README.md
-git commit -m "docs: add README with setup instructions and features"
+Industrial accidents in India cause over **48,000 deaths annually** *(Labour Bureau, GoI)*. Most are preventable through proper PPE usage and hazard awareness. Raksha-Kavach replaces paper checklists, verbal reminders, and manual logs with a structured, gamified mobile workflow — all fully offline.
 
+---
 
-# ─────────────────────────────────────────────
-# STEP 3: Add meaningful commits per feature
-# (run each separately — don't batch them)
-# ─────────────────────────────────────────────
+## ✨ Features
 
-git add app/src/main/java/com/rakshakavach/app/ui/auth/
-git commit -m "feat: implement login and registration with session management"
+| Module | Description |
+|--------|-------------|
+| 🔐 **Authentication** | Local registration & login with session management via SharedPreferences |
+| 🏠 **Home Dashboard** | Safety score, streak, gear progress, and quick-access feature cards |
+| 👤 **Profile** | Editable personal & work details with safety stats |
+| ✅ **Gear Checklist** | Task-based PPE verification across 10 construction tasks |
+| ⚠️ **Risk Meter** | Real-time risk gauge (EXTREME → SAFE) based on gear compliance |
+| 📋 **Incident Log** | Near-miss reporting with severity classification, stored in Room DB |
+| 🧠 **Daily Safety Quiz** | 5 timed MCQs from a question bank with instant feedback |
+| 🏆 **Safety Score** | Points-based gamification with streaks and safety level progression |
+| 🔔 **Notifications** | Daily 7 AM WorkManager reminder, survives device reboot via BootReceiver |
 
-git add app/src/main/java/com/rakshakavach/app/ui/home/
-git commit -m "feat: add home dashboard with safety score and feature cards"
+---
 
-git add app/src/main/java/com/rakshakavach/app/ui/checklist/
-git commit -m "feat: add task selector and gear checklist with progress tracking"
+## 🎮 Gamification
 
-git add app/src/main/java/com/rakshakavach/app/ui/riskmeter/
-git commit -m "feat: add risk meter with real-time gear compliance gauge"
+| Action | Points |
+|--------|--------|
+| Mark Safe Day (≥80% gear) | +10 |
+| Complete checklist 100% | +10/day |
+| Perfect quiz (5/5) | +30 |
+| 7-day streak bonus | +50 |
+| Report Near Miss | -20 |
 
-git add app/src/main/java/com/rakshakavach/app/ui/incident/
-git commit -m "feat: add incident log with Room DB persistence"
+**Safety Levels:** Beginner → Learning → Safety Aware → Safety Pro → Safety Master → Safety Champion 🏆
 
-git add app/src/main/java/com/rakshakavach/app/ui/quiz/
-git commit -m "feat: add daily safety quiz with timer and scoring"
+---
 
-git add app/src/main/java/com/rakshakavach/app/ui/score/
-git commit -m "feat: add safety score screen with gamification levels"
+## 🏗️ Tech Stack
 
-git add app/src/main/java/com/rakshakavach/app/ui/profile/
-git commit -m "feat: add editable profile with work details"
+| Layer | Technology |
+|-------|-----------|
+| Language | Java (Android) |
+| Architecture | MVVM (Model-View-ViewModel) |
+| Database | Room ORM (SQLite) |
+| State Management | LiveData + ViewModel |
+| Background Work | WorkManager |
+| UI | Material Components 3, XML Layouts |
+| Auth | Local SharedPreferences |
 
-git add app/src/main/java/com/rakshakavach/app/notification/
-git commit -m "feat: add WorkManager daily notification with BootReceiver"
+---
 
-git add app/src/main/java/com/rakshakavach/app/data/
-git commit -m "feat: set up Room DB with IncidentLog entity and DAO"
+## 📁 Project Structure
 
-git add app/src/main/java/com/rakshakavach/app/viewmodel/
-git commit -m "feat: add MainViewModel with LiveData for score and streak"
+```
+com.rakshakavach.app/
+├── data/
+│   ├── database/       IncidentDao, RakshaKavachDatabase
+│   └── model/          IncidentLog, Task, QuizQuestion
+├── notification/       SafetyReminderWorker, BootReceiver
+├── viewmodel/          MainViewModel
+└── ui/
+    ├── auth/           LoginActivity, RegisterActivity
+    ├── home/           MainActivity
+    ├── profile/        ProfileActivity
+    ├── checklist/      ChecklistActivity, GearChecklistActivity
+    ├── riskmeter/      RiskMeterActivity
+    ├── incident/       IncidentLogActivity
+    ├── quiz/           SafetyQuizActivity
+    ├── score/          SafetyScoreActivity
+    └── splash/         SplashActivity
+```
 
+---
 
-# ─────────────────────────────────────────────
-# STEP 4: Push everything to GitHub
-# ─────────────────────────────────────────────
+## 🚀 Getting Started
 
-git push origin master
+### Prerequisites
 
+- Android Studio **Hedgehog (2023.1.1)** or newer
+- JDK **17**
+- Android SDK **34** (Android 14)
+- Android device or emulator running **Android 7.0 (API 24)** or higher
 
-# ─────────────────────────────────────────────
-# STEP 5: Add repo description on GitHub
-# ─────────────────────────────────────────────
-# Go to https://github.com/Lav-AL/RakshaKavach
-# Click the ⚙️ gear icon next to "About"
-# Add description: "Android worker safety auditor — PPE checklists, incident logging, daily quiz & gamification. MindMatrix VTU Internship #42"
-# Add topics: android, safety, kotlin, mvvm, room-database, workmanager, internship
+### Build & Run
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Lav-AL/RakshaKavach.git
+
+# 2. Open in Android Studio
+#    File → Open → select the RakshaKavach folder
+
+# 3. Let Gradle sync automatically
+
+# 4. Run the app
+#    Click Run ▶ or press Shift+F10
+#    Select your emulator or connected device
+```
+
+### First Launch
+
+1. Register with your name, email, phone, and password
+2. Select a task from the Task Selector
+3. Verify your PPE gear on the checklist
+4. Mark a Safe Day to start earning points!
+
+---
+
+## 📦 Dependencies
+
+```gradle
+// AndroidX
+implementation 'androidx.appcompat:appcompat:1.6.1'
+implementation 'androidx.core:core-ktx:1.12.0'
+implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+// Material Design 3
+implementation 'com.google.android.material:material:1.11.0'
+
+// Room Database
+implementation 'androidx.room:room-runtime:2.6.1'
+ksp 'androidx.room:room-compiler:2.6.1'
+
+// WorkManager
+implementation 'androidx.work:work-runtime-ktx:2.9.0'
+
+// ViewModel + LiveData
+implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
+```
+
+---
+
+## 🎯 Target Users
+
+- **Ramesh** — Site worker who forgets PPE on busy days
+- **Priya** — Safety supervisor who needs to track compliance
+- **Arjun** — New joiner who needs to learn which PPE is required
+
+---
+
+## 📊 Success Metrics
+
+| Metric | Target |
+|--------|--------|
+| Daily Active Users | ≥ 70% of registered workers |
+| Gear Checklist Completion | ≥ 85% per working day |
+| Quiz Participation | ≥ 60% of active users |
+| App Crash Rate | < 0.5% of sessions |
+
+---
+
+## 🗺️ Roadmap (v2.0+)
+
+- [ ] Firebase cloud sync & supervisor dashboard
+- [ ] Hindi / Kannada / Tamil language support
+- [ ] Camera-based AI gear detection (ML Kit)
+- [ ] QR code site check-in with geofencing
+- [ ] Wear OS companion app
+
+---
+
+## 👨‍💻 Team
+
+**MindMatrix VTU Internship — Project #42**
+
+| Name | Role |
+|------|------|
+| Lav AL | Android Developer |
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+---
+
+*Built with ❤️ for worker safety in India*
