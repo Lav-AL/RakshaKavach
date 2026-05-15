@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base Application Theme - Yellow/Black Industrial -->
+    <style name="Theme.RakshaKavach" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/warning_yellow</item>
+        <item name="colorPrimaryVariant">@color/dark_yellow</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorSecondary">@color/success_green</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSurface">@color/dark_bg</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="android:windowBackground">@color/dark_bg</item>
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <!-- Splash Theme - Full Dark -->
+    <style name="Theme.RakshaKavach.Splash" parent="Theme.RakshaKavach">
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- Toolbar Style -->
+    <style name="ToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/black</item>
+        <item name="titleTextColor">@color/warning_yellow</item>
+        <item name="navigationIconTint">@color/warning_yellow</item>
+    </style>
+
+</resources>

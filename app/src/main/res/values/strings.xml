@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Raksha-Kavach</string>
+    <string name="tagline">Worker Safety Auditor</string>
+    <string name="task_selector_title">Select Task &amp; Check Gear</string>
+    <string name="risk_meter_title">Risk Meter</string>
+    <string name="incident_log_title">Incident Log</string>
+    <string name="safety_quiz_title">Daily Safety Quiz</string>
+    <string name="safety_score_title">My Safety Score</string>
+
+    <!-- Safety Messages -->
+    <string name="safety_reminder_title">🚨 Raksha-Kavach Safety Alert</string>
+    <string name="no_task_selected">No task selected. Please select a task from the checklist.</string>
+    <string name="gear_all_checked">✅ ALL GEAR CHECKED! You are SAFE to work!</string>
+    <string name="near_miss_reported">⚠️ Near Miss reported! Staying vigilant saves lives.</string>
+    <string name="safe_day_marked">🎉 Safe Day Recorded! +10 Safety Points Earned!</string>
+    <string name="complete_checklist_warning">⚠️ Complete at least 80% of gear checklist first!</string>
+</resources>

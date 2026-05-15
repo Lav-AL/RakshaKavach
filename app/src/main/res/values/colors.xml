@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors - Yellow/Black Industrial Theme -->
+    <color name="warning_yellow">#FFFFD600</color>
+    <color name="dark_yellow">#FFF0C000</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="dark_bg">#FF0D0D0D</color>
+
+    <!-- Risk Level Colors -->
+    <color name="risk_extreme">#FFFF1744</color>
+    <color name="risk_high">#FFFF6D00</color>
+    <color name="risk_medium">#FFFFAB00</color>
+    <color name="risk_low">#FF69F0AE</color>
+
+    <!-- Risk Background Colors -->
+    <color name="extreme_risk_bg">#1AFF1744</color>
+    <color name="high_risk_bg">#1AFF6D00</color>
+    <color name="medium_risk_bg">#1AFFAB00</color>
+    <color name="low_risk_bg">#1A69F0AE</color>
+    <color name="safe_bg">#1A00E676</color>
+
+    <!-- Status Colors -->
+    <color name="success_green">#FF00E676</color>
+    <color name="info_blue">#FF40C4FF</color>
+    <color name="gold_color">#FFFFC107</color>
+
+    <!-- Card Colors -->
+    <color name="card_yellow">#FFFFD600</color>
+    <color name="card_red">#FFB71C1C</color>
+    <color name="card_dark">#FF1A1A1A</color>
+    <color name="card_blue">#FF0D47A1</color>
+
+    <!-- Quiz Option -->
+    <color name="option_default_bg">#FFE8E8E8</color>
+</resources>

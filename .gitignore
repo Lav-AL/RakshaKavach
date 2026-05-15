@@ -1,49 +1,32 @@
-## Android generated files
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
+# Built application files
+*.apk
+*.aab
+*.ap_
+
+# Build directory - IMPORTANT: excludes auto-generated Java stubs
 /build
-/captures
-.externalNativeBuild
-.cxx
+app/build
+**/build/
+
+# Local configuration file (sdk path, etc)
 local.properties
 
-## Android Studio generated
-*.iml
-.idea/
-
-## Gradle
-.gradle/
-build/
+# Gradle files
+.gradle
 gradle-wrapper.jar
 
-## Keystore files (NEVER commit these)
+# Android Studio IDE files
+*.iml
+.idea/
+.DS_Store
+captures/
+
+# Keystore files (NEVER commit these)
 *.jks
 *.keystore
 
-## Log files
+# Log files
 *.log
 
-## Local configuration
-local.properties
-keystore.properties
-
-## Output files
-/out/
-/release/
-
-## OS generated
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Google Services (if added later)
+google-services.json
